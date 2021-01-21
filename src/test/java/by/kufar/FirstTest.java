@@ -6,16 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FirstTest {
-
-    public ChromeDriver driver;
-
-    @Before
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "f:\\Job\\Java\\ChromeDriver\\chromedriver.exe");
-        driver = new ChromeDriver();
-        System.out.println("Test start");
-    }
+public class FirstTest extends WebDriverSettings {
 
     @Test
     public void firstTest() {
@@ -24,6 +15,8 @@ public class FirstTest {
 
         String title = driver.getTitle();
         Assert.assertTrue(title.equals("Куфар в Беларуси - доска бесплатных объявлений | Барахолка в Беларуси"));
+
+        System.out.println("Тест-1 прошёл");
 
     }
     @Test
@@ -34,11 +27,9 @@ public class FirstTest {
         String title = driver.getTitle();
         Assert.assertTrue(title.equals("Куфар в Беларуси - доска бесплатных объявлений | Барахолка в Беларуси"));
 
+        System.out.println("Тест-2 прошёл");
+
     }
 
-    @After
-    public void close() {
-        System.out.println("Test closed");
-        driver.quit();
-    }
+
 }
